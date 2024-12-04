@@ -21,7 +21,7 @@ public class Main {
         }
         System.out.println(coins);
 
-        // Replacing every second coin with a nickel 5
+        // Replacing every third coin with a dime
         int dimeInterval = 3;
         int lastDime = -1;
         for (int i = 0; i < coins.size(); i++){
@@ -32,7 +32,7 @@ public class Main {
         }
         System.out.println(coins);
 
-        // Replacing every second coin with a nickel 5
+        // Replacing every fourth coin with a quarter
         int quarterInterval = 4;
         int lastQuarter = -1;
         for (int i = 0; i < coins.size(); i++){
