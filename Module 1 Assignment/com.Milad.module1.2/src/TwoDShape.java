@@ -1,4 +1,4 @@
-public class TwoDShape {
+public abstract class TwoDShape {
     private double width;
     private double height;
 
@@ -12,9 +12,7 @@ public class TwoDShape {
         this.height = height;
     }
 
-    public double getArea(){
-        return width * height; // Is not correct for every 2D object, meant to be overridden
-    }
+    public abstract double getArea();
 
     public void setHeight(double height){
         this.height = height;
