@@ -1,3 +1,4 @@
 Questions:
 Should I include height and width in toString even when it may be a default value of 0?
 Should I make my default params in triangle null instead of 0?
+My rotate methods in Triangle will just be a print right?
