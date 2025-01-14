@@ -4,9 +4,10 @@ Questions:
 - Should I include rotation in my constructor?
 - I cannot name a package 'module1.1' or '1'. Therefore, I used underscores instead. Is that okay?
 - Is there a rule of thumb as to when I should use javadoc for a method. I assume ambiguous or complicated methods would
-require them but in this assignment that would rule all out all.
+require them but in this assignment that would rule them all out.
+- Should I comment stuff that organizes? E.g. // fields or // getters and setters for triangle sides
+- Should I consider false values? E.g. negative side numbers? If so, I assume I give it a default value if false value?
 
 TO DO:
-- Properly comment code
 - Add test cases
 - improve main class

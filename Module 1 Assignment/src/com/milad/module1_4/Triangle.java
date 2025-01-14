@@ -1,11 +1,18 @@
 package com.milad.module1_4;
 
 public class Triangle extends TwoDShape implements Rotate {
+    // Fields
     private double side1;
     private double side2;
     private double side3;
     private double rotation;
 
+    /**
+     * Triangle constructor with width and height as the main params.
+     * @param width width of the triangle
+     * @param height height of the triangle
+     * @param colour colour of the triangle
+     */
     public Triangle(double width, double height, Colour colour){
         super(width, height, colour);
 
@@ -17,11 +24,11 @@ public class Triangle extends TwoDShape implements Rotate {
     }
 
     /**
-     * Triangle constructor with params
+     * Triangle constructor with sides as the main params. We get height using herons formula.
      * @param side1 side 1 of the triangle
      * @param side2 side 2 of the triangle
      * @param side3 side 3 of the triangle
-     * @param colour the color of triangle
+     * @param colour the colour of triangle
      */
     public Triangle(double side1, double side2, double side3, Colour colour){
         super();
@@ -37,6 +44,10 @@ public class Triangle extends TwoDShape implements Rotate {
         setColour(colour);
     }
 
+    /**
+     * Gets area of triangle by either using the sides or height & width.
+     * @return area of triangle
+     */
     @Override
     public double getArea(){
         // If statement to give area when only width and height are defined but sides are default
@@ -44,15 +55,21 @@ public class Triangle extends TwoDShape implements Rotate {
             return (getHeight() * getWidth())/2;
         }
 
+        // Otherwise, get area using the three sides.
         double s = (side1 + side2 + side3)/2; // s = (a + b + c)/2
         return Math.sqrt((s * (s-side1)) * (s-side2) * (s-side3)); // area = sqrt(s * (s-a) * (s-b) * (s-c))
     }
 
+    /**
+     * Gets height of triangle using herons formula
+     * @return height of triangle
+     */
     private double heronsHeight(){
         double area = getArea();
         return (2 * area)/side1; // height = (2*area)/base
     }
 
+    // Getters and setters for triangle sides
     public double getSide1() {
         return side1;
     }
@@ -77,6 +94,7 @@ public class Triangle extends TwoDShape implements Rotate {
         this.side3 = side3;
     }
 
+    // My toString override method
     @Override
     public String toString() {
         return "2D Triangle. Side 1 length: " + side1 + ". Side 2 length: " + side2 + ". " +
