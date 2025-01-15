@@ -7,6 +7,8 @@ Questions:
 require them but in this assignment that would rule them all out.
 - Should I comment stuff that organizes? E.g. // fields or // getters and setters for triangle sides
 - Should I consider false values? E.g. negative side numbers? If so, I assume I give it a default value if false value?
+- How much coverage should my tests have. Can I just only focus on code that I believe needs testing?
+- What should I do when my test's expected and actual value both use the same formula/methods?
 
 TO DO:
 - Add test cases
