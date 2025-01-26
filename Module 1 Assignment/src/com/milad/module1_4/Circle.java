@@ -7,8 +7,8 @@ public class Circle extends TwoDShape{
 
     /**
      * Constructor for circle that gets width and height from the radius param
-     * @param radius radius of circle
-     * @param colour colour of circle
+     * @param radius positive non-zero double as the radius of circle
+     * @param colour a colour from the enum Colour as the colour of circle
      */
     public Circle(double radius, Colour colour){
         super(radius * 2, radius * 2, colour); // Height and width of a circle is its diameter (radius * 2)
@@ -36,6 +36,6 @@ public class Circle extends TwoDShape{
     // My toString override method
     @Override
     public String toString() {
-        return "2D Circle. Radius: " + radius + ". Colour: " + getColour();
+        return "2D Circle. Height: " + getHeight() + ". Width: " + getWidth() + ". Radius: " + radius + ". Colour: " + getColour();
     }
 }

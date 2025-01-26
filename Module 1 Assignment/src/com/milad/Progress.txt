@@ -1,15 +1,6 @@
 Questions:
-- Should I include height and width in toString even when it may be a default value of 0?
-- Should I make my default params in triangle null instead of 0?
-- Should I include rotation in my constructor?
-- I cannot name a package 'module1.1' or '1'. Therefore, I used underscores instead. Is that okay?
-- Is there a rule of thumb as to when I should use javadoc for a method. I assume ambiguous or complicated methods would
-require them but in this assignment that would rule them all out.
-- Should I comment stuff that organizes? E.g. // fields or // getters and setters for triangle sides
-- Should I consider false values? E.g. negative side numbers? If so, I assume I give it a default value if false value?
-- How much coverage should my tests have. Can I just only focus on code that I believe needs testing?
-- What should I do when my test's expected and actual value both use the same formula/methods?
 
 TO DO:
 - Add test cases
 - improve main class
+- Apply changes from 1.4 to the previous versions where applicable
