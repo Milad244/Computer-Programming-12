@@ -8,7 +8,7 @@ public class Triangle extends TwoDShape implements Rotate {
     private double rotation;
 
     /**
-     * Triangle constructor with width and height as the main params.
+     * Triangle constructor with width and height as the main params, as well as a colour
      * @param width positive non-zero double as the width of the triangle
      * @param height positive non-zero double as the height of the triangle
      * @param colour a colour from the enum Colour as the colour of the triangle
@@ -19,7 +19,7 @@ public class Triangle extends TwoDShape implements Rotate {
     }
 
     /**
-     * Triangle constructor with sides as the main params. We get height using herons formula.
+     * Triangle constructor with sides as the main params, as well as a colour. We get height using herons formula and width from side 2.
      * @param side1 positive non-zero double as the side 1 of the triangle
      * @param side2 positive non-zero double as the side 2 (base/width) of the triangle
      * @param side3 positive non-zero double as the side 3 of the triangle

@@ -6,7 +6,7 @@ public class Circle extends TwoDShape{
     private double radius;
 
     /**
-     * Constructor for circle that gets width and height from the radius param
+     * Constructor for circle that gets width and height from the radius param, as well as a colour
      * @param radius positive non-zero double as the radius of circle
      * @param colour a colour from the enum Colour as the colour of circle
      */

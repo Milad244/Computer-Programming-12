@@ -7,7 +7,7 @@ public abstract class TwoDShape {
     private Colour colour;
 
     /**
-     * Default constructor for 2D shape.
+     * Default constructor for 2D shape, giving the shape a width and height of 0, and no colour
      */
     public TwoDShape(){
         width = 0;
@@ -16,7 +16,7 @@ public abstract class TwoDShape {
     }
 
     /**
-     * Constructor for twoD shape
+     * Constructor for 2D shape with params to set its width, height, as well as a colour
      * @param width positive non-zero double as the width of 2D shape
      * @param height positive non-zero double as the height of 2D shape
      * @param colour a colour from the enum Colour as the colour of 2D shape
