@@ -20,7 +20,8 @@ public class Triangle extends TwoDShape implements Rotate {
 
     /**
      * Triangle constructor with sides as the main params, as well as a colour. We get height using herons formula and width from side 2.
-     * @param side1 positive non-zero double as the side 1 of the triangle
+     * The sum of two sides must be greater than the third side
+     * @param side1 positive non-zero double as the side 1 of the triangle.
      * @param side2 positive non-zero double as the side 2 (base/width) of the triangle
      * @param side3 positive non-zero double as the side 3 of the triangle
      * @param colour a colour from the enum Colour as the colour of the triangle
@@ -58,7 +59,7 @@ public class Triangle extends TwoDShape implements Rotate {
      */
     private double heronsHeight(){
         double area = getArea();
-        return (2 * area)/side1; // height = (2*area)/base
+        return (2 * area)/side2; // height = (2*area)/base
     }
 
     // Getters and setters for triangle sides

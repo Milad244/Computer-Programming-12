@@ -2,5 +2,5 @@ Questions:
 
 TO DO:
 - Add test cases
-- improve main class
+- improve main class (remove test-like comments from main)
 - Apply changes from 1.4 to the previous versions where applicable

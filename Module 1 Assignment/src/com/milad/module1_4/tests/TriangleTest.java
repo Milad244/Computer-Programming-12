@@ -10,7 +10,7 @@ public class TriangleTest {
      * Partitioned the testing for Triangle as follows:
      * Testing the area formula from width and height constructed triangle.
      * Testing the area formula from sides constructed triangle.
-     * Testing all the setters and getters including, height, width, colour, rotation, side1, side2, side3
+     * Testing all the setters and getters including, height, width, colour, rotation, side1, side2, side3 with both constructors
      */
 
     /**
@@ -44,15 +44,47 @@ public class TriangleTest {
     }
 
     /**
-     * Positive width and height
-     * Decimal width and height
-     * Decimal width and less than 1 decimal height
+     * <pre>
+     * Testing the area formula from side constructed triangle:
+     * - Positive sides
+     * - Side1 of 1 with other whole number sides
+     * - Side2 of decimal number and whole number sides
+     * - All sides of decimal number
+     * - All sides of less than 1 decimal number
+     * - Got expected values using online calculator src: <a href="https://www.omnicalculator.com/math/3-sides-triangle-area">src</a>
+     * - Not testing boundary of 0 and negative numbers because not permitted as specified in constructor
+     * - Also made sure to follow the sum rule specified in the constructor
+     * </pre>
      */
     @Test public void testAreaFromSides(){
-
+        // Positive sides
+        assertEquals(131.45, new Triangle(29, 23, 12, Colour.NONE).getArea(), 1);
+        // Side1 of 1 with other whole number sides
+        assertEquals(1.479, new Triangle(1, 3, 3, Colour.NONE).getArea(), 1);
+        // Side2 of decimal number and whole number sides
+        assertEquals(4369, new Triangle(175, 102.5, 99, Colour.NONE).getArea(), 1);
+        // All sides of decimal number
+        assertEquals(60.55, new Triangle(10.9, 11.1111, 15.615, Colour.NONE).getArea(), 1);
+        // All sides of less than 1 decimal number
+        assertEquals(0.03977, new Triangle(0.313, 0.28, 0.499999, Colour.NONE).getArea(), 1);
     }
 
+    /**
+     * <pre>
+     * Testing all the setters and getters including, height, width, colour, rotation, side1, side2, side3 with both constructors:
+     * - Width and height constructor
+     * - Side constructor
+     * </pre>
+     */
+    @Test public void testSettersAndGetters(){
+        // Width and height constructor
+        Triangle widthAndHeightTriangle = new Triangle(50, 75, Colour.BLUE);
+        assertEquals(50, widthAndHeightTriangle.getWidth(), 0);
+        assertEquals(75, widthAndHeightTriangle.getHeight(), 0);
+        // Continue here
 
+        // Side constructor
+    }
 
 
 }
