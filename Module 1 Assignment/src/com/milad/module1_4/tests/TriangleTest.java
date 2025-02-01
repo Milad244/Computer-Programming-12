@@ -10,7 +10,7 @@ public class TriangleTest {
      * Partitioned the testing for Triangle as follows:
      * Testing the area formula from width and height constructed triangle.
      * Testing the area formula from sides constructed triangle.
-     * Testing all the setters and getters including, height, width, colour, rotation, side1, side2, side3 with both constructors
+     * Testing all the getters including, height, width, colour, rotation, side1, side2, side3 with both constructors
      */
 
     /**
@@ -71,19 +71,33 @@ public class TriangleTest {
 
     /**
      * <pre>
-     * Testing all the setters and getters including, height, width, colour, rotation, side1, side2, side3 with both constructors:
+     * Testing all the getters including, height, width, colour, rotation, side1, side2, side3 with both constructors:
      * - Width and height constructor
      * - Side constructor
      * </pre>
      */
-    @Test public void testSettersAndGetters(){
+    @Test public void testGetters(){
         // Width and height constructor
         Triangle widthAndHeightTriangle = new Triangle(50, 75, Colour.BLUE);
+        widthAndHeightTriangle.rotate90();
+
         assertEquals(50, widthAndHeightTriangle.getWidth(), 0);
         assertEquals(75, widthAndHeightTriangle.getHeight(), 0);
-        // Continue here
+        assertEquals(Colour.BLUE, widthAndHeightTriangle.getColour());
+        assertEquals(90, widthAndHeightTriangle.getRotation(), 0);
+        assertEquals(50, widthAndHeightTriangle.getSide2(), 0); // Can only test side 2 from width & height constructor
 
         // Side constructor
+        Triangle sideTriangle = new Triangle(29, 23, 12, Colour.Red);
+        sideTriangle.rotate180();
+
+        assertEquals(23, sideTriangle.getWidth(), 0);
+        assertEquals((2 * 131.45)/23, sideTriangle.getHeight(), 1);
+        assertEquals(Colour.Red, sideTriangle.getColour());
+        assertEquals(180, sideTriangle.getRotation(), 0);
+        assertEquals(29, sideTriangle.getSide1(), 0);
+        assertEquals(23, sideTriangle.getSide2(), 0);
+        assertEquals(12, sideTriangle.getSide3(), 0);
     }
 
 

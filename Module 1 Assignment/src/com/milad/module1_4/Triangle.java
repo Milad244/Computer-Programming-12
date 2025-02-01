@@ -109,4 +109,9 @@ public class Triangle extends TwoDShape implements Rotate {
     public void rotate(double degrees) {
         rotation += degrees;
     }
+
+    // Getter for rotation so I can test it
+    public double getRotation(){
+        return rotation;
+    }
 }
