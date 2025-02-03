@@ -1,6 +1,1 @@
-Questions:
-
-TO DO:
-- Make setter/getter tests in triangle individual like how I did in circle (also include setters in them)
-- improve main class (remove test-like comments from main)
-- Apply changes from 1.4 to the previous versions where applicable
+FINISHED!

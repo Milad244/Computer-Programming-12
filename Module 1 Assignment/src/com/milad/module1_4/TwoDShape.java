@@ -1,7 +1,6 @@
 package com.milad.module1_4;
 
 public abstract class TwoDShape {
-    // Fields
     private double width;
     private double height;
     private Colour colour;
@@ -30,7 +29,7 @@ public abstract class TwoDShape {
     // Abstract method (must be overridden in child classes)
     public abstract double getArea();
 
-    // Getters and Setters
+    // Getters and Setters for width, height, and colour
     public void setHeight(double height){
         this.height = height;
     }

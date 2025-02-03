@@ -1,7 +1,6 @@
 package com.milad.module1_4;
 
 public class Circle extends TwoDShape{
-    // Fields
     public final double PI = Math.PI;
     private double radius;
 

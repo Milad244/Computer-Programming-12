@@ -1,7 +1,6 @@
 package com.milad.module1_4;
 
 public class Triangle extends TwoDShape implements Rotate {
-    // Fields
     private double side1;
     private double side2; // treated as base/width of the triangle
     private double side3;
@@ -39,26 +38,21 @@ public class Triangle extends TwoDShape implements Rotate {
     }
 
     /**
-     * Gets area of triangle by either using the sides or height & width.
+     * Gets area of triangle by using its height & width: (h*w)/2
      * @return area of triangle
      */
     @Override
     public double getArea(){
-        if (getHeight() == 0){ // If we are using getArea to set height, then we must get area using the three sides.
-            double s = (side1 + side2 + side3)/2; // s = (a + b + c)/2
-            return Math.sqrt((s * (s-side1)) * (s-side2) * (s-side3)); // area = sqrt(s * (s-a) * (s-b) * (s-c))
-        }
-
-        // Otherwise, we can use (height and width)/2 to get area
         return (getHeight() * getWidth())/2;
     }
 
     /**
-     * Gets height of triangle using herons formula
+     * Gets height of triangle using herons formula and gets area from the sides because we only call this when we do not know height
      * @return height of triangle
      */
     private double heronsHeight(){
-        double area = getArea();
+        double s = (side1 + side2 + side3)/2; // s = (a + b + c)/2
+        double area = Math.sqrt((s * (s-side1)) * (s-side2) * (s-side3)); // area = sqrt(s * (s-a) * (s-b) * (s-c))
         return (2 * area)/side2; // height = (2*area)/base
     }
 
@@ -110,7 +104,7 @@ public class Triangle extends TwoDShape implements Rotate {
         rotation += degrees;
     }
 
-    // Getter for rotation so I can test it
+    // Getter for rotation
     public double getRotation(){
         return rotation;
     }
