@@ -34,6 +34,6 @@ public class Circle extends TwoDShape{
     // My toString override method
     @Override
     public String toString() {
-        return "2D Circle. Height: " + getHeight() + ". Width: " + getWidth() + ". Radius: " + radius;
+        return "2D Circle. Height: " + getHeight() + ". Width: " + getWidth() + ". Area: " + getArea() + ". Radius: " + radius;
     }
 }

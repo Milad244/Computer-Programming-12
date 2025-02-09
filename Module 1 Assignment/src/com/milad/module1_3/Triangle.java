@@ -81,7 +81,7 @@ public class Triangle extends TwoDShape implements Rotate {
     // My toString override method
     @Override
     public String toString() {
-        return "2D Triangle. Height: " + getHeight() + ". Width: " + getWidth() + ". Side 1 length: " + side1 + ". Side 2 length: " + side2 + ". " +
+        return "2D Triangle. Height: " + getHeight() + ". Width: " + getWidth() + ". Area: " + getArea() + ". Side 1 length: " + side1 + ". Side 2 length: " + side2 + ". " +
                 "Side 3 length: " + side3 + ". Rotation: " + rotation;
     }
 

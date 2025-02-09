@@ -56,6 +56,6 @@ public abstract class TwoDShape {
 
     @Override
     public String toString() {
-        return "2D Shape. Width: " + width + ". Height: " + height + ". Colour: " + colour;
+        return "2D Shape. Width: " + width + ". Height: " + height + ". Area: " + getArea() + ". Colour: " + colour;
     }
 }
