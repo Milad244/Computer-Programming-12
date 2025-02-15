@@ -1,0 +1,2 @@
+- I am only creating javadoc/comments for new material and things that need explaining. Ex: I am not writing javadoc for
+equals and hashcode overrides after I did it in Planet.
