@@ -19,10 +19,10 @@ public class Planet {
 
     /**
      * Planet constructor with designation, mass, years of orbiting Earth, and planet type
-     * @param designation The unique identifier of the planet
-     * @param massKg The mass of the planet in kg
-     * @param orbitEarthYears The length of years the planet has orbited Earth
-     * @param type The general type of the planet
+     * @param designation The unique identifier of the planet as a string
+     * @param massKg The mass of the planet in kg as a double
+     * @param orbitEarthYears The length of years the planet has orbited Earth as a double
+     * @param type The general type of the planet as a PlanetType
      */
     public Planet(String designation, double massKg, double orbitEarthYears, PlanetType type) {
         this.designation = designation;

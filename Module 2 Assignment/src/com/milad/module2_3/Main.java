@@ -1,42 +1,33 @@
-package com.milad.module2_2;
+package com.milad.module2_3;
 
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        LinkedList<Card> cards = createCardStack();
+        LinkedList<Card> randomDeck = createCardStack();
+        Collections.shuffle(randomDeck);
 
-        Iterator<Card> iterator = cards.iterator();
-
-        System.out.println("Showing a regular card deck\n");
-        while(iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
-
-        LinkedList<Card> cardsForGame = createCardStack();
-        Collections.shuffle(cardsForGame);
-
-        System.out.println("\nShowing the master deck before I take my cards\n");
-        for (Card c : cardsForGame) {
+        System.out.println("Showing the random deck\n");
+        for (Card c : randomDeck) {
             System.out.println(c);
         }
 
-        LinkedList<Card> myCards = new LinkedList<>();
+        SortBySuits suitsSorter = new SortBySuits();
+        LinkedList<Card> sortedBySuitsDeck = (LinkedList<Card>) randomDeck.clone();
+        sortedBySuitsDeck.sort(suitsSorter);
 
-        // Taking 7 cards from the top of the deck (FILO)
-        for (int i = 0; i < 7; i++) {
-            myCards.add(cardsForGame.pollLast());
-        }
-
-        System.out.println("\nShowing my card deck hand\n");
-        for (Card c : myCards) {
+        System.out.println("\nShowing the deck ordered by suits\n");
+        for (Card c : sortedBySuitsDeck) {
             System.out.println(c);
         }
 
-        System.out.println("\nShowing the master deck after I take my cards\n");
-        for (Card c : cardsForGame) {
+        SortByValue valueSorter = new SortByValue();
+        LinkedList<Card> sortedByValueDeck = (LinkedList<Card>) randomDeck.clone();
+        sortedByValueDeck.sort(valueSorter);
+
+        System.out.println("\nShowing the deck ordered by value\n");
+        for (Card c : sortedByValueDeck) {
             System.out.println(c);
         }
     }

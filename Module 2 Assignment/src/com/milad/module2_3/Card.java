@@ -1,4 +1,4 @@
-package com.milad.module2_2;
+package com.milad.module2_3;
 
 public class Card {
     private final int numberCard;
@@ -25,6 +25,22 @@ public class Card {
         this.faceCard = faceCard;
         numberCard = 0;
         this.suit = suit;
+    }
+
+    /**
+     * Gets the card value for either a number card or face card
+     * @return card value. Number card is its number, jack is 11, queen is 12, king is 13
+     */
+    public int getValue() {
+        if (faceCard != null) {
+            return faceCard.getCardValue();
+        } else {
+            return numberCard;
+        }
+    }
+
+    public Suit getSuit() {
+        return suit;
     }
 
     @Override

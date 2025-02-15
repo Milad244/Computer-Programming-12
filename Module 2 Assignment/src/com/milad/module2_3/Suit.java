@@ -1,4 +1,4 @@
-package com.milad.module2_2;
+package com.milad.module2_3;
 
 public enum Suit {
     HEART("Hearts"), DIAMOND("Diamonds"), CLUB("Clubs"), SPADE("Spades");
