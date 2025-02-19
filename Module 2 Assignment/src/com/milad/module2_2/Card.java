@@ -10,7 +10,7 @@ public class Card {
      * @param numberCard the number of the card as an int. Ace is 1 so only 1-10 is allowed
      * @param suit the suit of the card as a Suit
      */
-    Card(int numberCard, Suit suit) {
+    public Card(int numberCard, Suit suit) {
         this.numberCard = numberCard;
         faceCard = null;
         this.suit = suit;
@@ -21,7 +21,7 @@ public class Card {
      * @param faceCard the type of face of the face card as a faceCard.
      * @param suit the suit of the card as a Suit
      */
-    Card(FaceCard faceCard, Suit suit) {
+    public Card(FaceCard faceCard, Suit suit) {
         this.faceCard = faceCard;
         numberCard = 0;
         this.suit = suit;
