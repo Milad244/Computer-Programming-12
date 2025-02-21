@@ -1,3 +1,5 @@
-1. Do I need to write as a type in param javadoc.
+1. Do I need to write 'as a type' in param javadoc? The javadoc already says it so it feels redundant.
 Ex: * @param massKg The mass of the planet in kg as a double OR * @param massKg The mass of the planet in kg
-2. Ask if I should count a word with an apostrophe as one word
+2. Should I count a word with an apostrophe in it as one word in Module 2.4 Word line 33?
+3. My encryption conserves spaces but removes any special characters and lowers capital letters. Is that satisfactory?
+4. I only realized this after completing my Cipher but I made it so the code works for any shift key (not just 0-25) is that okay?
