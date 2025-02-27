@@ -9,8 +9,8 @@ public class Planet {
     /**
      *
      * Planet constructor with only designation and the planet type
-     * @param designation The unique identifier of the planet
-     * @param type The general type of the planet
+     * @param designation The unique identifier of the planet as a string
+     * @param type The general type of the planet as a PlanetType
      */
     public Planet(String designation, PlanetType type){
         this.designation = designation;
@@ -33,7 +33,7 @@ public class Planet {
 
     /**
      * Override of equals method from Object to compare a given Planet with another using its designation field
-     * @param obj The other Planet you are comparing with
+     * @param obj The other Planet you are comparing with as an Object
      * @return True if both planets have the same designation, false otherwise
      */
     @Override
@@ -58,6 +58,6 @@ public class Planet {
 
     @Override
     public String toString() {
-        return "Planet. Designation: " + designation + "\tType: " + type;
+        return "Planet. Designation: " + designation + "\tType: " + type + "\tMass: " + massKg + "\tOrbit Earth Years: " + orbitEarthYears;
     }
 }
