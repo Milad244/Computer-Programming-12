@@ -44,18 +44,18 @@ public class Main {
     private static LinkedList<Card> createCardStack() {
         LinkedList<Card> cards = new LinkedList<>();
 
-        for (int i = 0; i < 13; i++){
-            if (i < 10) {
+        for (int i = 1; i < 14; i++){
+            if (i < 11) {
                 cards.add(new Card(i, Suit.DIAMOND));
                 cards.add(new Card(i, Suit.HEART));
                 cards.add(new Card(i, Suit.CLUB));
                 cards.add(new Card(i, Suit.SPADE));
-            } else if (i == 10) {
+            } else if (i == 11) {
                 cards.add(new Card(FaceCard.JACK, Suit.DIAMOND));
                 cards.add(new Card(FaceCard.JACK, Suit.HEART));
                 cards.add(new Card(FaceCard.JACK, Suit.CLUB));
                 cards.add(new Card(FaceCard.JACK, Suit.SPADE));
-            } else if (i == 11) {
+            } else if (i == 12) {
                 cards.add(new Card(FaceCard.QUEEN, Suit.DIAMOND));
                 cards.add(new Card(FaceCard.QUEEN, Suit.HEART));
                 cards.add(new Card(FaceCard.QUEEN, Suit.CLUB));
