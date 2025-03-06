@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Circle/Circle.iml" filepath="$PROJECT_DIR$/Circle/Circle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Coin-Puzzle/Coin-Puzzle.iml" filepath="$PROJECT_DIR$/Coin-Puzzle/Coin-Puzzle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FirstAssignmentPrograms/Circle/Circle.iml" filepath="$PROJECT_DIR$/FirstAssignmentPrograms/Circle/Circle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FirstAssignmentPrograms/Coin-Puzzle/Coin-Puzzle.iml" filepath="$PROJECT_DIR$/FirstAssignmentPrograms/Coin-Puzzle/Coin-Puzzle.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Computer Programming 12.iml" filepath="$PROJECT_DIR$/.idea/Computer Programming 12.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Coordinate-Calculator/Coordinate-Calculator.iml" filepath="$PROJECT_DIR$/Coordinate-Calculator/Coordinate-Calculator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Emotion-Detector/Emotion-Detector.iml" filepath="$PROJECT_DIR$/Emotion-Detector/Emotion-Detector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FirstAssignmentPrograms/Coordinate-Calculator/Coordinate-Calculator.iml" filepath="$PROJECT_DIR$/FirstAssignmentPrograms/Coordinate-Calculator/Coordinate-Calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FirstAssignmentPrograms/Emotion-Detector/Emotion-Detector.iml" filepath="$PROJECT_DIR$/FirstAssignmentPrograms/Emotion-Detector/Emotion-Detector.iml" />
       <module fileurl="file://$PROJECT_DIR$/General/General.iml" filepath="$PROJECT_DIR$/General/General.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 1 Assignment (OLD)/com.Milad.module1.1/com.Milad.module1.1.iml" filepath="$PROJECT_DIR$/Module 1 Assignment (OLD)/com.Milad.module1.1/com.Milad.module1.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 1 Assignment (OLD)/com.Milad.module1.2/com.Milad.module1.2.iml" filepath="$PROJECT_DIR$/Module 1 Assignment (OLD)/com.Milad.module1.2/com.Milad.module1.2.iml" />
