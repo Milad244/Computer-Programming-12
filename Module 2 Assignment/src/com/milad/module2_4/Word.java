@@ -29,8 +29,7 @@ public class Word {
 
         while ((currentCharacter = br.read()) != -1) {
             // adds the character in lowercase to the currentWord if they are a letter
-            // I also added another argument to not make a new word if currentCharacter is being used as an apostrophe
-            if (Character.isLetter(currentCharacter) || (currentCharacter == '\'' && !currentWord.isEmpty())) {
+            if (Character.isLetter(currentCharacter)) {
                 currentWord += Character.toLowerCase((char) currentCharacter);
             } else if (!currentWord.isEmpty()) {
                 uniqueWords.add(currentWord);

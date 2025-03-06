@@ -27,6 +27,10 @@ public class Card {
         this.suit = suit;
     }
 
+    public boolean isFaceCard() {
+        return faceCard != null;
+    }
+
     /**
      * Gets the card value for either a number card or face card
      * @return card value. Number card is its number, jack is 11, queen is 12, king is 13

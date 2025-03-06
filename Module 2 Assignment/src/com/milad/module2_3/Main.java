@@ -22,12 +22,12 @@ public class Main {
             System.out.println(c);
         }
 
-        SortByValue valueSorter = new SortByValue();
-        LinkedList<Card> sortedByValueDeck = (LinkedList<Card>) randomDeck.clone();
-        sortedByValueDeck.sort(valueSorter);
+        SortByFace faceSorter = new SortByFace();
+        LinkedList<Card> sortedByFaceCardOrNot = (LinkedList<Card>) randomDeck.clone();
+        sortedByFaceCardOrNot.sort(faceSorter);
 
-        System.out.println("\nShowing the deck ordered by value\n");
-        for (Card c : sortedByValueDeck) {
+        System.out.println("\nShowing the deck ordered by whether or not it is a face card\n");
+        for (Card c : sortedByFaceCardOrNot) {
             System.out.println(c);
         }
     }
