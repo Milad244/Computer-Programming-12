@@ -1,5 +1,7 @@
 package com.milad.Sorting;
 
+import java.util.Arrays;
+
 public class Sorter {
 
     public static int[] bubbleSort(int[] array){
@@ -16,7 +18,6 @@ public class Sorter {
     }
 
     public static int[] mergeSort(int[] array) {
-
         // Recursive control 'if' statement.
         if(array.length <= 1) {
             return array;
@@ -41,12 +42,10 @@ public class Sorter {
 
         // Return the sorted merged array.
         return result;
-
     }
 
     // Merges the left and right array in ascending order.
     private static int[] merge(int[] left, int[] right) {
-
         // Merged result array.
         int[] result = new int[left.length + right.length];
 

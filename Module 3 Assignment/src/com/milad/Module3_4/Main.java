@@ -38,11 +38,46 @@ public class Main {
     public static void main(String[] args) {
         players = new ArrayList<>();
         try {
-            parseCSVData(new File("PlayerData.csv"));
+            parseCSVData(new File("src/com/milad/Module3_4/PlayerData.csv"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         for (PlayerBattingStats player : players) {
+            //System.out.println(player);
+        }
+
+        System.out.println("GAMES PLAYED SORT");
+        ArrayList<PlayerBattingStats> gamesSort = PlayerSorter.sort(players, PlayerSorter.GAMESPLAYED);
+        assert gamesSort != null;
+        for (PlayerBattingStats player : gamesSort) {
+            System.out.println(player);
+        }
+
+        System.out.println("AT BATS SORT");
+        ArrayList<PlayerBattingStats> atBatsSort = PlayerSorter.sort(players, PlayerSorter.ATBATS);
+        assert atBatsSort != null;
+        for (PlayerBattingStats player : atBatsSort) {
+            System.out.println(player);
+        }
+
+        System.out.println("RUNS SORT");
+        ArrayList<PlayerBattingStats> runsSort = PlayerSorter.sort(players, PlayerSorter.RUNS);
+        assert runsSort != null;
+        for (PlayerBattingStats player : runsSort) {
+            System.out.println(player);
+        }
+
+        System.out.println("PERCENT RUNS SORT");
+        ArrayList<PlayerBattingStats> percentRunsSort = PlayerSorter.sort(players, PlayerSorter.PERCENTRUNS);
+        assert percentRunsSort != null;
+        for (PlayerBattingStats player : percentRunsSort) {
+            System.out.println(player);
+        }
+
+        System.out.println("PERCENT ON BASE SORT");
+        ArrayList<PlayerBattingStats> percentOnBaseSort = PlayerSorter.sort(players, PlayerSorter.PERCENTONBASE);
+        assert percentOnBaseSort != null;
+        for (PlayerBattingStats player : percentOnBaseSort) {
             System.out.println(player);
         }
     }
