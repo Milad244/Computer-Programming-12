@@ -1,10 +1,10 @@
-
 import java.awt.Color;
 import javax.swing.*;
 import java.awt.Graphics;
 import java.awt.event.*;
 import flanagan.io.*;
 import java.awt.Image;
+import java.util.Arrays;
 
 
 public class Gridder extends javax.swing.JFrame 
@@ -678,29 +678,87 @@ public class Gridder extends javax.swing.JFrame
             timmy.setDelay(stepDelay);
     }//GEN-LAST:event_jSliderDelayStateChanged
 
+    /**
+     * When the button is pressed, select a random location within the grid
+     * and turn that square to write. Repeat this 100 times (use a loop,
+     * don't copy and paste 100 times)
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.out.println("1");
+        int loopCount = 0;
+        while (loopCount < 100) {
+            grid[(int) (Math.random()*gridCount)][(int) (Math.random()*gridCount)] = 1;
+            loopCount++;
+        }
         draw();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    /**
+     * When the button is pressed, select a random column. Set all the
+     * squares in this column to white. Then draw().
+     */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         System.out.println("2");
+        int randomCol = (int) (Math.random()*gridCount);
+        System.out.println(randomCol);
+        // My original method
+//        for (int row = 0; row < grid[randomCol].length; row++) {
+//            grid[randomCol][row] = 1;
+//        }
+        // Intellij tells me to do this instead
+        Arrays.fill(grid[randomCol], 1);
+        draw();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    /**
+     * When the button is pressed, color the entire top half of the grid
+     * white and the entire bottom half black. You can use clearGrid()
+     * which is already coded in the project to help you in your answer.
+     */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.out.println("3");
+        int halfPoint = gridCount/2;
+        for (int row = 0; row < gridCount; row++) {
+            if (row < halfPoint) {
+                for (int col = 0; col < gridCount; col++) {
+                    grid[col][row] = 1;
+                }
+            } else {
+                for (int col = 0; col < gridCount; col++) {
+                    grid[col][row] = 0;
+                }
+            }
+        }
         draw();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-
-
+    /**
+     * When the button is pressed, count the number of squares in the grid
+     * that are white. Print out the total in the textbox textInfo with a line
+     * like: textInfo.setText(Integer.toString(count));
+     */
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("4");
-
+        int count = 0;
+        for (int[] col : grid) {
+            for (int row : col) {
+                if (row == 1) {
+                    count++;
+                }
+            }
+        }
+        textInfo.setText(Integer.toString(count));
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    /**
+     * When the button is pressed, clear the grid and then create a white X
+     * (make a white line from top left corner to bottom right corner and
+     * bottom left corner to top right corner).
+     */
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("5");
-
+        // Continue here :)
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
