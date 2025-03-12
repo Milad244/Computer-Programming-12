@@ -758,27 +758,122 @@ public class Gridder extends javax.swing.JFrame
      */
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("5");
-        // Continue here :)
+        clearGrid();
+        // Top left corner to bottom right corner
+        for (int col = 0; col < gridCount; col++) {
+            grid[col][col] = 1;
+        }
+        // Bottom left corner to top right corner
+        for (int col = 0; col < gridCount; col++) {
+            grid[col][gridCount-col-1] = 1; //-1 because arr starts at 0 and so just out of bounds at gridCount
+        }
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    /**
+     * When the button is pressed, inverse the grid. All black squares will
+     * become white and all white squares will become black.
+     */
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("6");
-
+        for (int col = 0; col < gridCount; col++) {
+            for (int row = 0; row < gridCount; row++) {
+                if (grid[col][row] == 1) {
+                    grid[col][row] = 0;
+                } else {
+                    grid[col][row] = 1;
+                }
+            }
+        }
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    /**
+     * When the button is pressed, any black square touching TWO white
+     * squares will turn white. Consider all eight directions!
+     */
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("7");
+        int [][] temp = new int[100][100]; // Use temp because we do not want to modify the grid while reading it
+        for (int col=0; col<100; col++)
+            for (int row=0; row<100; row++)
+                temp[col][row] = grid[col][row];
 
+        for (int col=0; col<100; col++) {
+            for (int row=0; row<100; row++) {
+                if (grid[col][row] == 1) {
+                    continue;
+                }
+                int touchedWhiteCount = 0;
+                System.out.println(row);
+
+                if (row!=0 && grid[col][row-1] == 1) { //check above
+                    touchedWhiteCount++;
+                }
+                if (row!=99 && grid[col][row+1] == 1) { //check below
+                    touchedWhiteCount++;
+                }
+                if (col!=0 && grid[col-1][row] == 1) { //check left
+                    touchedWhiteCount++;
+                }
+                if (col!=99 && grid[col+1][row]==1) { //check right
+                    touchedWhiteCount++;
+                }
+                if (col!=0 && row!=0 && grid[col-1][row-1]==1) { //check top left
+                    touchedWhiteCount++;
+                }
+                if (col!=99 && row!=0 && grid[col+1][row-1]==1) { //check top right
+                    touchedWhiteCount++;
+                }
+                if (col!=0 && row!=99 && grid[col-1][row+1]==1) { //check bottom left
+                    touchedWhiteCount++;
+                }
+                if (col!=99 && row!=99 && grid[col+1][row+1]==1) { //check bottom right
+                    touchedWhiteCount++;
+                }
+
+                if (touchedWhiteCount >= 2) {
+                    temp[col][row] = 1;
+                }
+            }
+        }
+
+        grid = temp;
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    /**
+     * When the button is pressed, all squares will move one position to
+     * the left. The leftmost column will become the rightmost column. If
+     * you press the button fast enough, this should create a 'scrolling'
+     * effect with your drawing.
+     */
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("8");
+        int [][] temp = new int[100][100];
+        for (int col=0; col<100; col++)
+            for (int row=0; row<100; row++) {
+                if (col == 0) {
+                    temp[99][row] = grid[col][row];
+                } else {
+                    temp[col-1][row] = grid[col][row];
+                }
+            }
 
+        grid = temp;
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    /**
+     * When the button is pressed, rotate the grid 90 degrees to the right.
+     * Most of you have seen this option in Photoshop or photo programs
+     * where you want the entire image to rotate by 90 degrees. Well, get
+     * to it!
+     */
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("9");
-
+        // I assume the rotation will be from the center
+        // Last thing to do!
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
 
