@@ -872,8 +872,16 @@ public class Gridder extends javax.swing.JFrame
      */
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         System.out.println("9");
-        // I assume the rotation will be from the center
-        // Last thing to do!
+        int [][] temp = new int[100][100];
+        for (int col=0; col<100; col++)
+            for (int row=0; row<100; row++) {
+                temp[100 - 1 - row][col] = grid[col][row];
+                // I used the formula (x', y') = (y, -x)
+                // Col is the x, and it becomes the flipped y. -1 is there because the index starts at 0 not 1
+                // Row is the y, and it becomes the old x
+            }
+
+        grid = temp;
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
 
