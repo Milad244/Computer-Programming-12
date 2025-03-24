@@ -5,24 +5,20 @@ public class SleepData {
     private String sleepEnd;
     private String sleepTotal;
 
+    /**
+     * Data from a given day of sleeping
+     * @param date date slept (from the night before) as a string
+     * @param day day of the week as a string
+     * @param sleepStart time when sleep started as a string
+     * @param sleepEnd time when sleep ended as a string
+     * @param sleepTotal total time spent sleeping (sleepEnd-sleepStart) as a string
+     */
     public SleepData(String date, String day, String sleepStart, String sleepEnd, String sleepTotal) {
         this.date = date;
         this.day = day;
         this.sleepStart = sleepStart;
         this.sleepEnd = sleepEnd;
         this.sleepTotal = sleepTotal;
-    }
-
-    public void addSleepData(){
-        DatabaseHandler handler = new DatabaseHandler();
-        // Change MEMBER
-        String qu = "INSERT INTO MEMBER VALUES (" +
-                "'" + date + "'," +
-                "'" + day + "'," +
-                "'" + sleepStart + "'," +
-                "'" + sleepEnd + "'," +
-                "'" + sleepTotal + "')";
-        handler.execAction(qu);
     }
 
     public String getDate() {
