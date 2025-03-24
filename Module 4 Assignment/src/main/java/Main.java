@@ -6,8 +6,13 @@ public class Main {
         manageSleep.parseSleepData("src/main/resources/Sleep Data.csv");
         ArrayList<SleepData> sleepData = manageSleep.getSleepData();
         System.out.println(sleepData);
-        //SleepData first = sleepData.getFirst();
-        //DatabaseHandler.getHandler().insertSleepData(0, first.getDate(), first.getDay(), first.getSleepStart(), first.getSleepEnd(), first.getSleepTotal());
-        DatabaseHandler.getHandler().showMembers();
+
+        DatabaseHandler db = DatabaseHandler.getHandler();
+        SleepData first = sleepData.getFirst();
+        //db.insertSleepData(first.getDate(), first.getDay(), first.getSleepStart(), first.getSleepEnd(), first.getSleepTotal());
+        //db.deleteSleepTable();
+        db.showSleepData();
+        //db.deleteSleepData(1);
+        //db.showSleepData();
     }
 }

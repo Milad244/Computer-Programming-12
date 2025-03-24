@@ -5,6 +5,7 @@ public class DatabaseHandler {
     private static Connection conn = null;
     private static Statement stmt = null;
     public static DatabaseHandler handler;
+    private static final String SLEEP_TABLE_NAME = "SLEEP_TABLE";
 
     public static DatabaseHandler getHandler(){
         if(handler == null){
@@ -15,7 +16,7 @@ public class DatabaseHandler {
 
     public DatabaseHandler() {
         createConnection();
-        //createTable();
+        createSleepTable();
     }
 
     private void createConnection() {
@@ -26,100 +27,64 @@ public class DatabaseHandler {
         }
     }
 
-    /** Old table
-    private void createTable() {
-        String TABLE_NAME = "MEMBER2";
+    private void createSleepTable() {
         try {
             stmt = conn.createStatement();
             DatabaseMetaData dmn = conn.getMetaData();
-            ResultSet tables = dmn.getTables(null, null, TABLE_NAME, null);
+            ResultSet tables = dmn.getTables(null, null, SLEEP_TABLE_NAME, null);
+
             if (tables.next()) {
-                System.out.println("Table " + TABLE_NAME + " exists");
+                System.out.println("Table " + SLEEP_TABLE_NAME + " already exists");
             } else {
-                String statement = "CREATE TABLE " + TABLE_NAME + " ("
-                        + "id varchar(200) primary key, \n"
-                        + "name varchar(200), \n"
-                        + "email varchar(200), \n"
-                        + "nickname varchar(200))";
-                System.out.println(statement);
-                stmt.execute(statement);
+                String qu = "CREATE TABLE " + SLEEP_TABLE_NAME + " ("
+                        + "id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, \n"
+                        + "date VARCHAR(200), \n"
+                        + "day VARCHAR(200), \n"
+                        + "sleepStart VARCHAR(200), \n"
+                        + "sleepEnd VARCHAR(200), \n"
+                        + "sleepTotal VARCHAR(200))";
+                System.out.println(qu);
+                stmt.execute(qu);
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("Did not create sleep table");
         }
-    }*/
+    }
 
-    private void createTable() {
-        String TABLE_NAME = "TABLE1";
+    public void insertSleepData(String date, String day, String sleepStart, String sleepEnd, String sleepTotal) {
+        String qu = String.format("INSERT INTO %s (date, day, sleepStart, sleepEnd, sleepTotal) "
+                + "VALUES ('%s', '%s', '%s', '%s', '%s')", SLEEP_TABLE_NAME, date, day, sleepStart, sleepEnd, sleepTotal);
+        System.out.println(qu);
+        execAction(qu);
+    }
+
+    public void deleteSleepData(int id) {
+        String qu = "SELECT * FROM " + SLEEP_TABLE_NAME;
         try {
-            stmt = conn.createStatement();
-            DatabaseMetaData dmn = conn.getMetaData();
-            ResultSet tables = dmn.getTables(null, null, TABLE_NAME, null);
-
-            boolean tableExists = false;
-            System.out.println(tables.next());
-            while (tables.next()) {
-                System.out.println("CHECKING");
-                String currentTableName = tables.getString("TABLE_NAME");
-                System.out.println(currentTableName);
-                if (TABLE_NAME.equalsIgnoreCase(currentTableName)) {
-                    tableExists = true;
-                    break;
+            ResultSet rs = execQuery(qu);
+            while (rs.next()) {
+                int currentId = Integer.parseInt(rs.getString("id"));
+                if (currentId == id) {
+                    String delQu = "DELETE FROM " + SLEEP_TABLE_NAME + " WHERE id=" + currentId;
+                    System.out.println(delQu);
+                    execAction(delQu);
                 }
             }
-
-            if (tableExists) {
-                System.out.println("Table " + TABLE_NAME + " exists");
-            } else {
-                String statement = "CREATE TABLE " + TABLE_NAME + " ("
-                        + "id varchar(200) primary key, \n"
-                        + "date varchar(200), \n"
-                        + "day varchar(200), \n"
-                        + "sleepStart varchar(200), \n"
-                        + "sleepEnd varchar(200), \n"
-                        + "sleepTotal varchar(200))";
-                System.out.println(statement);
-                stmt.execute(statement);
-            }
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("Did not delete sleep data");
         }
     }
 
-    public void insertSleepData(int id, String date, String day, String sleepStart, String sleepEnd, String sleepTotal) {
-        String insertQuery = String.format("INSERT INTO Table1 (id, date, day, sleepStart, sleepEnd, sleepTotal) "
-                + "VALUES ('%d', '%s', '%s', '%s', '%s', '%s')", id, date, day, sleepStart, sleepEnd, sleepTotal);
-        System.out.println(insertQuery);
-        execAction(insertQuery);
+    public void deleteSleepTable() {
+        execAction("DROP TABLE " + SLEEP_TABLE_NAME);
     }
 
-    /** Old data
-    public void insertSampleData() {
-        String insertQuery = "INSERT INTO MEMBER2 (id, name, email, nickname) "
-                + "VALUES ('1', 'John Doe', 'john@example.com', 'Johnny')";
-        execAction(insertQuery);
-    }
-
-
-    public void showMembers() {
-        String query = "SELECT * FROM MEMBER2";
+    public void showSleepData() {
+        String qu = "SELECT * FROM " + SLEEP_TABLE_NAME;
         try {
-            ResultSet rs = execQuery(query);
-            while (rs.next()) {
-                System.out.println("ID: " + rs.getString("id"));
-                System.out.println("Name: " + rs.getString("name"));
-                System.out.println("Email: " + rs.getString("email"));
-                System.out.println("Nickname: " + rs.getString("nickname"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }*/
-
-    public void showMembers() {
-        String query = "SELECT * FROM Table1";
-        try {
-            ResultSet rs = execQuery(query);
+            ResultSet rs = execQuery(qu);
             while (rs.next()) {
                 System.out.println("ID: " + rs.getString("id"));
                 System.out.println("Date: " + rs.getString("date"));
@@ -130,10 +95,10 @@ public class DatabaseHandler {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("Did not show sleep data");
         }
     }
-
-
+    
     public boolean execAction(String qu) {
         try {
             stmt = conn.createStatement();
