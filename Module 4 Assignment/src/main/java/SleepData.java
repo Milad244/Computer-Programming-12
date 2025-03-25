@@ -11,7 +11,7 @@ public class SleepData {
      * @param day day of the week as a string
      * @param sleepStart time when sleep started as a string
      * @param sleepEnd time when sleep ended as a string
-     * @param sleepTotal total time spent sleeping (sleepEnd-sleepStart) as a string
+     * @param sleepTotal total time spent sleeping as a string
      */
     public SleepData(String date, String day, String sleepStart, String sleepEnd, String sleepTotal) {
         this.date = date;

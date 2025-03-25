@@ -9,11 +9,17 @@ public class Main {
         show();
     }
 
+    /**
+     * Deletes sleep table from database entirely
+     */
     private static void reset() {
         DatabaseHandler db = DatabaseHandler.getHandler();
         db.deleteSleepTable();
     }
 
+    /**
+     * Inserts my Sleep Data csv file into my database
+     */
     private static void setup() {
         ArrayList<SleepData> sleepData = ManageSleep.parseSleepData("src/main/resources/Sleep Data.csv");
         System.out.println(sleepData);
@@ -24,6 +30,9 @@ public class Main {
         db.showSleepData();
     }
 
+    /**
+     * Deletes the id=1 row of sleep and adds a new row before creating a new sleep data csv file
+     */
     private static void usage() {
         DatabaseHandler db = DatabaseHandler.getHandler();
         db.deleteSleepData(1);
@@ -32,6 +41,9 @@ public class Main {
         ManageSleep.createSleepDataFile("DB Sleep Data.csv", db.getSleepData());
     }
 
+    /**
+     * Shows the database
+     */
     private static void show() {
         DatabaseHandler db = DatabaseHandler.getHandler();
         db.showSleepData();

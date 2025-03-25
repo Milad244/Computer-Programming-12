@@ -10,7 +10,7 @@ public class DatabaseHandler {
 
     /**
      * Returns database handler which is used to run my database's methods
-     * @return returns a new handler if a database handler has not been initiated else returns the one already initiated
+     * @return returns a new handler if a database handler has not been initiated, else returns the one already initiated
      */
     public static DatabaseHandler getHandler(){
         if(handler == null){
@@ -39,7 +39,7 @@ public class DatabaseHandler {
     }
 
     /**
-     * Creates a sleep table to manage Sleep Data if it does not already exist
+     * Creates a sleep table for Sleep Data if it does not already exist
      */
     private void createSleepTable() {
         try {
@@ -68,7 +68,7 @@ public class DatabaseHandler {
 
     /**
      * Inserts a row of SleepData into the database sleep table
-     * @param sleepData XD
+     * @param sleepData SleepData
      */
     public void insertSleepData(SleepData sleepData) {
         String qu = String.format("INSERT INTO %s (date, day, sleepStart, sleepEnd, sleepTotal) "
