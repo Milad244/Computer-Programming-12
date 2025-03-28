@@ -1,0 +1,17 @@
+#mainBox {
+    -fx-background-color: #0a011a;
+    -fx-border-color: #6b2a39;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+}
+
+#companyLabel{
+    -fx-font-size: 35px;
+    -fx-font-family: "Trebuchet MS";
+    -fx-fill: #FAFAFA;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.6) , 6, 0.0 , 0 , 2 );
+}
+
+.button{
+    -fx-cursor: hand;
+}
