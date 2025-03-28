@@ -1,4 +1,4 @@
-#mainBox {
+.parentBox {
     -fx-background-color: #0a011a;
     -fx-border-color: #6b2a39;
     -fx-border-width: 2px;
@@ -14,4 +14,23 @@
 
 .button{
     -fx-cursor: hand;
+}
+
+#accessLabel {
+    -fx-font-size: 40px;
+    -fx-font-family: "Trebuchet MS";
+    -fx-fill: #FAFAFA;
+    -fx-effect: innershadow( three-pass-box , rgba(0,255,0,0.6) , 6, 0.0 , 0 , 2 );
+}
+
+#userLabel {
+    -fx-font-size: 30px;
+    -fx-font-family: "Trebuchet MS";
+    -fx-fill: #FAFAFA;
+    -fx-effect: innershadow( three-pass-box , rgba(192, 148, 209,0.8) , 6, 0.0 , 0 , 2 );
+}
+
+.infoLabel {
+    -fx-font-size: 20px;
+    -fx-fill: #FAFAFA;
 }

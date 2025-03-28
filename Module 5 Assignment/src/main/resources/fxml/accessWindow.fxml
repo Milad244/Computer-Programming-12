@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" styleClass="parentBox" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AccessController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="796.0" prefWidth="533.0" spacing="5.0">
+         <children>
+            <Label id="accessLabel" stylesheets="@../style.css" text="System Accessed" textAlignment="CENTER" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </Label>
+            <Label id="userLabel" stylesheets="@../style.css" text="Users" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <ListView fx:id="userList" prefHeight="250.0" prefWidth="600.0" />
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="533.0" spacing="5.0">
+               <children>
+                  <Label styleClass="infoLabel" stylesheets="@../style.css" text="Add New User" textFill="WHITE" />
+                  <TextField fx:id="newUsernameField" promptText="Username" styleClass="loginField" stylesheets="@../style.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="newPasswordField" promptText="Password" styleClass="loginField" stylesheets="@../style.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button mnemonicParsing="false" text="+">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox fx:id="selectedUserHBox" alignment="CENTER" prefHeight="89.0" prefWidth="533.0">
+               <children>
+                  <Label fx:id="selectedUserLbl" styleClass="infoLabel" stylesheets="@../style.css" text="Selected User" textFill="WHITE">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </Label>
+                  <Button mnemonicParsing="false" text="Delete" />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#exit" text="Exit" />
+         </children>
+      </VBox>
+   </children>
+</HBox>
