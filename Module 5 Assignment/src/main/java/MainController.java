@@ -40,14 +40,14 @@ public class MainController implements Initializable {
         for (User u : users) {
             if (login.getUsername().equals(u.getUsername()) && login.getPassword().equals(u.getPassword())) {
                 grantAccess();
-            } else {
-                declineAccess();
+                return;
             }
         }
+        declineAccess();
     }
 
     public void declineAccess() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setHeaderText("Login Failed");
         alert.setContentText("Login Information Incorrect");
         alert.showAndWait();

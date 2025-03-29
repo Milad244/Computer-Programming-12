@@ -37,21 +37,21 @@
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <Button mnemonicParsing="false" text="+">
+                  <Button mnemonicParsing="false" onAction="#addUser" text="+">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
                </children>
             </HBox>
-            <HBox fx:id="selectedUserHBox" alignment="CENTER" prefHeight="89.0" prefWidth="533.0">
+            <HBox fx:id="selectedUserHBox" alignment="CENTER" prefHeight="60.0" prefWidth="533.0" spacing="5.0">
                <children>
                   <Label fx:id="selectedUserLbl" styleClass="infoLabel" stylesheets="@../style.css" text="Selected User" textFill="WHITE">
                      <padding>
                         <Insets right="5.0" />
                      </padding>
                   </Label>
-                  <Button mnemonicParsing="false" text="Delete" />
+                  <Button mnemonicParsing="false" onAction="#deleteUser" text="Delete" />
                </children>
             </HBox>
             <Button mnemonicParsing="false" onAction="#exit" text="Exit" />

@@ -52,7 +52,6 @@ public class DatabaseHandler {
                 System.out.println("Table " + USER_TABLE_NAME + " already exists");
             } else {
                 String qu = "CREATE TABLE " + USER_TABLE_NAME + " ("
-                        + "id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, \n"
                         + "username VARCHAR(200), \n"
                         + "password VARCHAR(200))";
                 System.out.println(qu);
@@ -79,18 +78,19 @@ public class DatabaseHandler {
 
     /**
      * Deletes a row of user from the user table
-     * @param id id of the row of user to be deleted
+     * @param username name of the user to be deleted
      */
-    public void deleteUser(int id) {
+    public void deleteUser(String username) {
         String qu = "SELECT * FROM " + USER_TABLE_NAME;
         try {
             ResultSet rs = execQuery(qu);
             while (rs.next()) {
-                int currentId = Integer.parseInt(rs.getString("id"));
-                if (currentId == id) {
-                    String delQu = "DELETE FROM " + USER_TABLE_NAME + " WHERE id=" + currentId;
+                String currentName = rs.getString("username");
+                if (currentName.equals(username)) {
+                    String delQu = "DELETE FROM " + USER_TABLE_NAME + " WHERE username='" + currentName + "'";
                     System.out.println(delQu);
                     execAction(delQu);
+                    return;
                 }
             }
         } catch (SQLException e) {
@@ -116,7 +116,6 @@ public class DatabaseHandler {
         try {
             ResultSet rs = execQuery(qu);
             while (rs.next()) {
-                System.out.println("ID: " + rs.getString("id"));
                 System.out.println("Username: " + rs.getString("username"));
                 System.out.println("Password: " + rs.getString("password"));
             }
