@@ -32,7 +32,6 @@ public class AccessController implements Initializable {
             selectedUserHBox.setVisible(b);
     }
 
-    // Error: can select empty lists
     private void displayUsers() {
         showUserBox(false);
         userList.getItems().clear();
@@ -40,10 +39,16 @@ public class AccessController implements Initializable {
         ArrayList<User> users = DatabaseHandler.getHandler().getUsers();
         for (User u : users) {
             userList.getItems().add(u.getUsername());
+            System.out.println(u);
         }
 
         userList.setOnMouseClicked(event -> {
             String selectedUsername = (String) userList.getSelectionModel().getSelectedItem();
+
+            if (selectedUsername == null) {
+                return; // When selecting empty lists
+            }
+
             for (User u : users) {
                 if (selectedUsername.equals(u.getUsername())) {
                     selectUser(u);

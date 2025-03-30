@@ -5,15 +5,11 @@
     -fx-border-style: solid;
 }
 
-#companyLabel{
+#companyLabel {
     -fx-font-size: 35px;
     -fx-font-family: "Trebuchet MS";
     -fx-fill: #FAFAFA;
-    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.6) , 6, 0.0 , 0 , 2 );
-}
-
-.button{
-    -fx-cursor: hand;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.5) , 6, 0.0 , 0 , 2 );
 }
 
 #accessLabel {
@@ -31,6 +27,86 @@
 }
 
 .infoLabel {
-    -fx-font-size: 20px;
+    -fx-font-size: 22px;
     -fx-fill: #FAFAFA;
+    -fx-font-family: "Arial";
+}
+
+.text-field {
+    -fx-background-color: #FFFFFF, #FFFFFF;
+    -fx-background-insets: 0, 2;
+    -fx-font-size: 15.5px;
+}
+
+.text-field:hover {
+    -fx-background-color: #ffb8d9, #FFFFFF;
+}
+
+.text-field:focused {
+    -fx-background-color: #fc6aae, #FFFFFF;
+}
+
+.button {
+    -fx-cursor: hand;
+    -fx-font-size: 16px;
+    -fx-background-color: #FAFAFA;
+    -fx-font-weight: bold;
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: linear-gradient(#bab5f5, #8673ff);
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+}
+
+.button:hover {
+    -fx-border-width: 0 0 3px 0;
+    -fx-border-color: linear-gradient(to bottom, #8673ff, #5a41e0);
+}
+
+.exitBtn {
+    -fx-border-color: linear-gradient(#ff4d5b, #ff2637);
+}
+
+.exitBtn:hover {
+    -fx-border-color: linear-gradient(to bottom, #f00518, #fa0014);
+}
+
+#deleteBtn {
+    -fx-border-color: linear-gradient(#c926ff, #9f0ecf);
+}
+
+#deleteBtn:hover {
+    -fx-border-color: linear-gradient(#9f0ecf, #730099);
+}
+
+#addBtn {
+    -fx-border-width: 0;
+    -fx-font-size: 16px;
+}
+
+#userList {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #2614fc;
+    -fx-border-width: 2px;
+    -fx-padding: 5px;
+    -fx-focus-color: transparent;
+    -fx-background-insets: 0;
+}
+
+#userList .list-cell {
+    -fx-font-size: 18px;
+    -fx-background-color: transparent;
+    -fx-padding: 4px;
+    -fx-text-fill: #333333;
+}
+
+#userList .list-cell:hover {
+    -fx-background-color: #85daff;
+}
+
+#userList .list-cell:selected {
+    -fx-background-color: #9c51c4;
+}
+
+#userList .list-cell:empty:hover {
+    -fx-background-color: transparent;
 }

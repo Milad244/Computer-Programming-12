@@ -31,7 +31,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="40.0" prefWidth="400.0">
                      <children>
-                        <TextField fx:id="usernameField" promptText="Username" styleClass="loginField" stylesheets="@../style.css">
+                        <TextField fx:id="usernameField" promptText="Username" stylesheets="@../style.css">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -40,7 +40,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="40.0" prefWidth="400.0">
                      <children>
-                        <TextField fx:id="passwordField" promptText="Password" styleClass="loginField" stylesheets="@../style.css">
+                        <TextField fx:id="passwordField" promptText="Password" stylesheets="@../style.css">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -54,7 +54,7 @@
                               <Font size="16.0" />
                            </font>
                         </Button>
-                        <Button id="ExitBtn" fx:id="exitBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#exit" stylesheets="@../style.css" text="Exit">
+                        <Button fx:id="exitBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#exit" styleClass="exitBtn" stylesheets="@../style.css" text="Exit">
                            <font>
                               <Font size="16.0" />
                            </font>

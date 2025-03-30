@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" styleClass="parentBox" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AccessController">
+<HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="parentBox" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AccessController">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="796.0" prefWidth="533.0" spacing="5.0">
+      <VBox alignment="TOP_CENTER" prefHeight="596.0" prefWidth="600.0" spacing="5.0">
          <children>
             <Label id="accessLabel" stylesheets="@../style.css" text="System Accessed" textAlignment="CENTER" textFill="WHITE">
                <VBox.margin>
@@ -23,7 +23,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Label>
-            <ListView fx:id="userList" prefHeight="250.0" prefWidth="600.0" />
+            <ListView id="userList" fx:id="userList" prefHeight="250.0" prefWidth="600.0" stylesheets="@../style.css" />
             <HBox alignment="CENTER" prefHeight="37.0" prefWidth="533.0" spacing="5.0">
                <children>
                   <Label styleClass="infoLabel" stylesheets="@../style.css" text="Add New User" textFill="WHITE" />
@@ -37,7 +37,7 @@
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <Button mnemonicParsing="false" onAction="#addUser" text="+">
+                  <Button id="addBtn" mnemonicParsing="false" onAction="#addUser" stylesheets="@../style.css" text="+">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -51,10 +51,10 @@
                         <Insets right="5.0" />
                      </padding>
                   </Label>
-                  <Button mnemonicParsing="false" onAction="#deleteUser" text="Delete" />
+                  <Button id="deleteBtn" mnemonicParsing="false" onAction="#deleteUser" stylesheets="@../style.css" text="Delete" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#exit" text="Exit" />
+            <Button mnemonicParsing="false" onAction="#exit" styleClass="exitBtn" stylesheets="@../style.css" text="Exit" />
          </children>
       </VBox>
    </children>
