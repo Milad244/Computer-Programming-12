@@ -21,7 +21,7 @@ public class DatabaseHandler {
     }
 
     /**
-     * Runs methods that initiate this database
+     * Runs methods that initiate the database
      */
     private DatabaseHandler() {
         createConnection();
@@ -40,7 +40,7 @@ public class DatabaseHandler {
     }
 
     /**
-     * Creates a user table for Users if it does not already exist
+     * Creates a user table for Users (and adds default user) if the table does not already exist
      */
     private void createUserTable() {
         try {
@@ -126,8 +126,8 @@ public class DatabaseHandler {
     }
 
     /**
-     * Creates an ArrayList of SleepData from the sleep table
-     * @return ArrayList of SleepData
+     * Creates an ArrayList of Users from the user table
+     * @return ArrayList of Users
      */
     public ArrayList<User> getUsers() {
         ArrayList<User> users = new ArrayList<>();

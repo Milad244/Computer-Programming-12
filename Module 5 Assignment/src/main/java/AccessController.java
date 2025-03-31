@@ -15,10 +15,14 @@ public class AccessController implements Initializable {
     public TextField newUsernameField;
     public TextField newPasswordField;
     public HBox selectedUserHBox;
-    public Label selectedUserLbl;
+    public Label selectedUsernameLbl;
+    public Label selectedPasswordLbl;
 
     private User selectedUser;
 
+    /**
+     * Exits the program
+     */
     public void exit() {
         System.exit(1);
     }
@@ -32,6 +36,9 @@ public class AccessController implements Initializable {
             selectedUserHBox.setVisible(b);
     }
 
+    /**
+     * Displays all users in the userList. Also makes clicking on a user select it
+     */
     private void displayUsers() {
         showUserBox(false);
         userList.getItems().clear();
@@ -39,7 +46,6 @@ public class AccessController implements Initializable {
         ArrayList<User> users = DatabaseHandler.getHandler().getUsers();
         for (User u : users) {
             userList.getItems().add(u.getUsername());
-            System.out.println(u);
         }
 
         userList.setOnMouseClicked(event -> {
@@ -58,12 +64,20 @@ public class AccessController implements Initializable {
         });
     }
 
+    /**
+     * Selects the given user, allowing viewing and modification
+     * @param user user to select as a User
+     */
     private void selectUser(User user) {
         selectedUser = user;
         showUserBox(true);
-        selectedUserLbl.setText("Username: " + selectedUser.getUsername() + "\tPassword: " + selectedUser.getPassword());
+        selectedUsernameLbl.setText(selectedUser.getUsername());
+        selectedPasswordLbl.setText(selectedUser.getPassword());
     }
 
+    /**
+     * Deletes the currently selected user from the user database if allowed
+     */
     public void deleteUser() {
         ArrayList<User> users = DatabaseHandler.getHandler().getUsers();
         if (users.size() > 1) {
@@ -74,6 +88,9 @@ public class AccessController implements Initializable {
         }
     }
 
+    /**
+     * Adds a user to the user database if allowed
+     */
     public void addUser() {
         String newUsername = newUsernameField.getText();
         String newPassword = newPasswordField.getText();
@@ -100,6 +117,11 @@ public class AccessController implements Initializable {
         displayUsers();
     }
 
+    /**
+     * Alerts user of an error
+     * @param action what the user is trying to do as a string
+     * @param error why what the user is trying to do is not allowed as a string
+     */
     private void giveUserError(String action, String error) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setHeaderText(action + " Failed");

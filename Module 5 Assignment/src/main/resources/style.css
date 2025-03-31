@@ -110,3 +110,7 @@
 #userList .list-cell:empty:hover {
     -fx-background-color: transparent;
 }
+
+.bold {
+    -fx-font-weight: bold;
+}

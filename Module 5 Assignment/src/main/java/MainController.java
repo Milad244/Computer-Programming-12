@@ -1,5 +1,4 @@
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -25,13 +24,19 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Platform.runLater(() -> exitBtn.requestFocus());
+        Platform.runLater(() -> exitBtn.requestFocus()); // Starts focus on exit button so the username placeholder text is visible
     }
 
+    /**
+     * Exits the program
+     */
     public void exit() {
         System.exit(1);
     }
 
+    /**
+     * Gets the login information and either accepts or declines access based on if the user login exists
+     */
     public void login() {
         User login = new User(usernameField.getText(), passwordField.getText());
         usernameField.clear();
@@ -46,6 +51,9 @@ public class MainController implements Initializable {
         declineAccess();
     }
 
+    /**
+     * Alerts user that login failed
+     */
     public void declineAccess() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setHeaderText("Login Failed");
@@ -53,12 +61,20 @@ public class MainController implements Initializable {
         alert.showAndWait();
     }
 
+    /**
+     * Closes the login window (mainWindow) and loads the accessWindow
+     */
     private void grantAccess() {
         Stage stage = (Stage) mainBox.getScene().getWindow();
         stage.close();
         loadWindow("fxml/accessWindow.fxml", "Access");
     }
 
+    /**
+     * Loads a javafx window
+     * @param location the fxml file location for the window as a string
+     * @param title the title for the window as a string
+     */
     private void loadWindow(String location, String title) {
         try {
             Parent parent = FXMLLoader.load(getClass().getResource(location));

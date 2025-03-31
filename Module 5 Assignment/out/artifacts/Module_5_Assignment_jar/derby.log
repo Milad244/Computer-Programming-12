@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sun Mar 30 17:49:58 PDT 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0195-e9ad-38dd-000039c9aac8 
+on database directory C:\All Milad Coding\Intellij\Computer Programming 12\Module 5 Assignment\out\artifacts\Module_5_Assignment_jar\database\forum with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@70dea4e 
+Loaded from file:/C:/All%20Milad%20Coding/Intellij/Computer%20Programming%2012/Module%205%20Assignment/out/artifacts/Module_5_Assignment_jar/Module-5-Assignment.jar
+java.vendor=Oracle Corporation
+java.runtime.version=22.0.1+8-16
+user.dir=C:\All Milad Coding\Intellij\Computer Programming 12\Module 5 Assignment\out\artifacts\Module_5_Assignment_jar
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
